@@ -33,18 +33,20 @@ def download_tle(TLEs_URL):
 # return the TLE lines (2 lines) of a specific orbital object 
 # obtained by a specific .tle file
 def get_tle(orbital_object):
-
+    tle_lines = []
     with open(f"../data/{orbital_object}.tle") as f:
-        tle_line1 = f.readline()
-        tle_line2 = f.readline()
+        tle_lines.append(f.readline())
+        tle_lines.append(f.readline())
 
-    return tle_line1, tle_line2
+    return tle_lines
+
+
 
 # temp for testing
 def main():
     #download_tle(TLE_URL)
-    r1,r2 = get_tle("ISS (ZARYA)")
-    print(r1+r2)
+    l = get_tle("ISS (ZARYA)")
+    print(l[0]+l[1])
 
 if __name__ == "__main__":
     main()
