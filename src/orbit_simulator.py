@@ -35,24 +35,21 @@ def calculate_orbit(tle_lines, minutes):
     
     return lats, lons
 
-# temp for testing
-def main():
-    # ISS for testing
-    tle = [ 
-        "1 25544U 98067A   25249.16482935  .00011253  00000+0  20385-3 0  9992",
-        "2 25544  51.6328 265.7109 0004205 306.5919  53.4683 15.50137885527726"
-    ]
+# # temp for testing
+# def main():
+#     # ISS for testing
+#     tle = [ 
+#         "1 25544U 98067A   25249.16482935  .00011253  00000+0  20385-3 0  9992",
+#         "2 25544  51.6328 265.7109 0004205 306.5919  53.4683 15.50137885527726"
+#     ]
 
-    # print the lats and lons
-    lats, lons = calculate_orbit(tle, 120)
-    for lat, lon in zip(lats, lons):
-        print(f"Lat: {lat}, Lon: {lon}")
+#     # print the lats and lons
+#     lats, lons = calculate_orbit(tle, 120)
+#     for lat, lon in zip(lats, lons):
+#         print(f"Lat: {lat}, Lon: {lon}")
 
-    import visualizer as vs
-    vs.plot_2D_orbit(lats, lons, "ISS (ZARYA)")
-
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
 
         
 
