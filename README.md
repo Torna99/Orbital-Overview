@@ -1,13 +1,12 @@
 # 🛰️ Orbital-Overview 
-This application is a a playground for checking satellites' orbits and their **ground tracks** on earth. 
-
+This application is a playground for exploring satellites' orbits and their **ground tracks** on Earth.
 ---
 
 ## ✨ Functions (MVP)
 
-- Downloads satellites' orbitals data (TLE)
-- Compute default (ISS) satellite position for a given period 
-- Visualize satellite's groud track on 2D earth map
+- Download satellites' orbital data (TLE)
+- Compute the default (ISS) satellite position for a given period
+- Visualize a satellite's ground track on a 2D Earth map
 
 ---
 
@@ -28,15 +27,19 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-### 3. Install dependences
+### 3. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Execute main script
+### 4. Run the main script
 ```bash
 python orbit-viewer.py
 ```
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 
 
