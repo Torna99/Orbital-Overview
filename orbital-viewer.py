@@ -6,7 +6,7 @@ import os.path
 
 STATIONS_TLE_URL = "https://celestrak.org/NORAD/elements/gp.php?GROUP=stations&amp;FORMAT=tle" 
 STATION = "ISS (ZARYA)"
-ORBIT_MINUTES = 60
+ORBIT_MINUTES = 90
 
 def main():
 
