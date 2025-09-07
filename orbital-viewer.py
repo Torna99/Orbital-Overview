@@ -16,7 +16,6 @@ def main():
         print(f"{STATION}'s TLE downloaded!")
 
     tle = tle_loader.get_tle(STATION)
-    print(f"{STATION}\n{tle[0]+tle[1]}")  
 
     # compute orbits  
     lats, lons = orbit_simulator.calculate_orbit(tle, ORBIT_MINUTES)
