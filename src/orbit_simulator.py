@@ -44,9 +44,12 @@ def main():
     ]
 
     # print the lats and lons
-    lats, lons = calculate_orbit(tle, 60)
+    lats, lons = calculate_orbit(tle, 120)
     for lat, lon in zip(lats, lons):
         print(f"Lat: {lat}, Lon: {lon}")
+
+    import visualizer as vs
+    vs.plot_2D_orbit(lats, lons, "ISS (ZARYA)")
 
 if __name__ == "__main__":
     main()
