@@ -1,5 +1,4 @@
 sgp4
 matplotlib
 requests
-skyfield
 cartopy
