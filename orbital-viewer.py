@@ -10,10 +10,16 @@ ORBIT_MINUTES = 90
 
 def main():
 
+    all_tles = tle_loader.get_all_tle_files()
+
     # Downloading the TLEs if not present in the directory data
-    if not os.path.isfile(f"./data/{STATION}.tle"):
+    if not all_tles: 
         tle_loader.download_tle(STATIONS_TLE_URL)
         print(f"{STATION}'s TLE downloaded!")
+    else: 
+        print("data dir not empty!")
+
+    # choose orbital object TODO
 
     tle = tle_loader.get_tle(STATION)
 

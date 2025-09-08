@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
+from matplotlib.animation import FuncAnimation
 
 def plot_2D_orbit(lats, lons, obj_name, title="2D Ground Track"):
 
@@ -23,4 +24,5 @@ def plot_2D_orbit(lats, lons, obj_name, title="2D Ground Track"):
     plt.legend()
 
     plt.show()
+
 

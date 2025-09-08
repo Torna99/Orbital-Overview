@@ -30,8 +30,7 @@ def download_tle(TLEs_URL):
             print(f"Attenzione: dati incompleti per {lines[i].strip()} (riga {i})")
     
 
-# return the TLE lines (2 lines) of a specific orbital object 
-# obtained by a specific .tle file
+# return the TLE lines (2 lines) of a specific orbital object obtained by a specific .tle file
 def get_tle(orbital_obj):
 
     tle_path = DATA_PATH / f"{orbital_obj}.tle"
@@ -43,12 +42,21 @@ def get_tle(orbital_obj):
     return tle_lines
 
 
+# return every TLE available in the data directory 
+def get_all_tle_files():
+    tle_files = []
+    for file in DATA_PATH.glob("*.tle"):
+        tle_files.append(file.stem)
+    return tle_files
+    
+
 
 # temp for testing
 # def main():
 #     #download_tle(TLE_URL)
-#     l = get_tle("ISS (ZARYA)")
-#     print(l[0]+l[1])
+#     # l = get_tle("ISS (ZARYA)")
+#     # print(l[0]+l[1])
+#     #print(get_all_tle_files())
 
 
 # if __name__ == "__main__":
