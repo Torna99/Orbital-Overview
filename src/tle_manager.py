@@ -2,8 +2,9 @@ import requests
 from pathlib import Path
 
 DATA_PATH = (Path(__file__).resolve().parent).parent / "data"
+TOT_MIN = 60 * 24
 
-# download TLEs from URL and create for each orbital object
+""" Download TLEs from URL and create for each orbital object """
 def download_tle(TLEs_URL):
 
     # downloading TLEs
@@ -29,8 +30,7 @@ def download_tle(TLEs_URL):
         else:
             print(f"Attenzione: dati incompleti per {lines[i].strip()} (riga {i})")
     
-
-# return the TLE lines (2 lines) of a specific orbital object obtained by a specific .tle file
+""" Return the TLE lines (2 lines) of a specific orbital object obtained by a specific .tle file """
 def get_tle(orbital_obj):
 
     tle_path = DATA_PATH / f"{orbital_obj}.tle"
@@ -41,25 +41,19 @@ def get_tle(orbital_obj):
 
     return tle_lines
 
-
-# return every TLE available in the data directory 
+""" Return every TLE available in the data directory """
 def get_all_tle_files():
     tle_files = []
     for file in DATA_PATH.glob("*.tle"):
         tle_files.append(file.stem)
     return tle_files
-    
 
+""" Calculate the orbit duration in minutes based on the mean motion (revolution per day) in the TLE """
+def compute_orbit_duration(tle):
 
-# temp for testing
-# def main():
-#     #download_tle(TLE_URL)
-#     # l = get_tle("ISS (ZARYA)")
-#     # print(l[0]+l[1])
-#     #print(get_all_tle_files())
-
-
-# if __name__ == "__main__":
-#     main()
+    # mean motion (revolution per day) is in column 53:63
+    mean_motion = float(tle[1][52:63])
+    minutes = TOT_MIN / mean_motion
+    return minutes
 
 

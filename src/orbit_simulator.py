@@ -3,7 +3,7 @@ from sgp4.api import jday
 import datetime
 import numpy as np
 
-# calculate lan and lon of the orbital object passed in the next 'minutes' minutes (for 2D rappresentation)
+"""Calculate lan and lon of the orbital object passed in the next 'minutes' minutes (for 2D rappresentation)"""
 def calculate_orbit(tle_lines, minutes):
 
     satellite = Satrec.twoline2rv(tle_lines[0], tle_lines[1])
@@ -34,22 +34,6 @@ def calculate_orbit(tle_lines, minutes):
         lons.append(lon)
     
     return lats, lons
-
-# # temp for testing
-# def main():
-#     # ISS for testing
-#     tle = [ 
-#         "1 25544U 98067A   25249.16482935  .00011253  00000+0  20385-3 0  9992",
-#         "2 25544  51.6328 265.7109 0004205 306.5919  53.4683 15.50137885527726"
-#     ]
-
-#     # print the lats and lons
-#     lats, lons = calculate_orbit(tle, 120)
-#     for lat, lon in zip(lats, lons):
-#         print(f"Lat: {lat}, Lon: {lon}")
-
-# if __name__ == "__main__":
-#     main()
 
         
 
