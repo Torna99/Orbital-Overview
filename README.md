@@ -13,8 +13,8 @@ TLE data are used by Simplified Perturbation Models—a family of five mathemati
 ## ✨ Functions (MVP)
 
 - Download satellites' orbital data (TLE)
-- Compute the default (ISS) satellite position for a given period
-- Visualize a satellite's ground track on a 2D Earth map
+- Compute satellites position for a given period
+- Visualize satellites' ground track on a 2D Earth map
 
 ---
 
