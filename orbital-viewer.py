@@ -1,6 +1,6 @@
 
-# WiP: questo codice richeide di passare come argomento del main le stazioni che si voglio visualizzare con 
-# necessità di conoscerli a priori e "bruttezza" nel passare gli argomenti tramite doppie virgolette => sistemare 
+# TODO: questo codice richeide di passare come argomento del main le stazioni che si voglio visualizzare con 
+# necessità di conoscerle a priori e "bruttezza" nel passare gli argomenti tramite doppie virgolette => sistemare 
 # 
 
 import src.tle_loader as tle_loader
@@ -13,6 +13,7 @@ import sys
 STATIONS_TLE_URL = "https://celestrak.org/NORAD/elements/gp.php?GROUP=stations&amp;FORMAT=tle" 
 DEFAULT_STATION = "ISS (ZARYA)"
 ORBIT_MINUTES = 90
+SIMULATION_SPEED = 100  # 1 = normal speed, 2 = double speed, etc
 
 def main():
 
@@ -44,7 +45,8 @@ def main():
         # plotting orbit
         visualizer.track_2D_orbit(fig, ax, lats, lons, satellite)
 
-    visualizer.show_plot()
+    sim_speed = (1000 * 60) / SIMULATION_SPEED
+    visualizer.show_plot(ORBIT_MINUTES, fig, sim_speed, f"2D Ground Track for {ORBIT_MINUTES} min at {SIMULATION_SPEED}x speed")
 
 
 if __name__ == "__main__":

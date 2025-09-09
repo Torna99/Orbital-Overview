@@ -25,7 +25,7 @@ def calculate_orbit(tle_lines, minutes):
             print("Error during orbital computing!")
             exit()
         
-        # calculate lat and lon (? WiP)
+        # calculate lat and lon (? TODO)
         x, y, z = r
         r_norm = np.linalg.norm(r)
         lat = np.degrees(np.arcsin(z / r_norm))
